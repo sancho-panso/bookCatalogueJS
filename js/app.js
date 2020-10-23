@@ -62,18 +62,18 @@ let bookCatalog = [
 
 for (const category in bookCatalog) {
     for(const categName in bookCatalog[category]){
-        console.log(categName);
+        let masivas = bookCatalog[category][categName];
+        console.log(categName + " " + masivas.length + " books");
         console.log("+++++++++++++++++++");  
-        console.log(bookCatalog[category][categName]); 
         for(const propArray in bookCatalog[category][categName]){
-            console.log(propArray);
             console.log("------------------");
             for(const propIndex in bookCatalog[category][categName][propArray] ){
                 let newBook = "";
-                if(bookCatalog[category][categName][propArray][propIndex] == 2020) newBook = "(nauja knyga)";
+                if(propIndex == "year" && bookCatalog[category][categName][propArray][propIndex] == 2020) newBook = "(nauja knyga)";
                 console.log(propIndex + ":" + bookCatalog[category][categName][propArray][propIndex] + newBook);
                 
             }
         }   
     }   
 }
+
